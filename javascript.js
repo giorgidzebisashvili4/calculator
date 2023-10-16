@@ -12,7 +12,8 @@ function divide(x,y){
     return x/y
 }
 
-let x =5;
+let x = 0;
+
 let y =2;
 let operator = "/";
 
@@ -31,16 +32,12 @@ function operate(operator,x,y){
 
 operate(operator,x,y)
 
-let displayValue = 15025
+let displayValue = 0
 
-// function display(displayValue){
-// let displayDiv= document.querySelector('.displey');
-// let display =document.createElement('h1');
-// display.textContent= displayValue;
-// displayDiv.appendChild(display);
-// }
-
-let displayDiv= document.querySelector('.displey');
+function display(){
+let displayDiv= document.querySelector('.display');
 let display =document.createElement('h1');
-display.textContent= "545645";
+display.textContent= `${x}${operator}${y}`;
 displayDiv.appendChild(display);
+}
+display()
