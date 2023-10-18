@@ -41,3 +41,5 @@ display.textContent= `${x}${operator}${y}`;
 displayDiv.appendChild(display);
 }
 display()
+
+console.log(x)
