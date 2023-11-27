@@ -3,6 +3,7 @@ const buttonsNum = document.querySelectorAll('.numbers>button')
 const buttonsOperators = document.querySelectorAll('.operators>button')
 const display = document.querySelector(".display")
 const equalsBtn = document.querySelector('#equals')
+const clearBtn = document.querySelector("#clear")
 
 
 function add(a,b){
@@ -15,7 +16,12 @@ function multiply(a,b){
     return a*b
 }
 function divide(a,b){
-    return a/b
+    if(b === "0"){
+        alert("can'd divided by 0")
+        clear()
+    }else{
+        return a/b}
+    
 }
 // functions for all of the basic math operators 
 
@@ -92,6 +98,7 @@ equals()
 })
 
 function equals(){
+    if(memoryArr.join("").split(" ").length > 1){
     let memoryArrDecode = memoryArr.join("").split(" ")
     
     firstNumber = memoryArrDecode[0]
@@ -106,8 +113,24 @@ function equals(){
 
     memoryArr.splice(0,memoryArr.length)
     memoryArr.push(displayValueMain)
+    }
+}
+
+clearBtn.addEventListener('click',()=>{
+    clear()
+})
+
+
+function clear(){
+// delates data
+memoryArr.splice(0,memoryArr.length)
+displayValueMain = ""
+displayTextSecond = ""
+
+displayTextSecond.textContent = ""
+displayTextSecond.textContent = ""
+console.log(memoryArr)
 }
 
 // equal sighn trigers calculation
 
-// console.log(operator(firstNumber,secondNumber,oper))
