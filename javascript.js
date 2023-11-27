@@ -2,7 +2,7 @@
 const buttonsNum = document.querySelectorAll('.numbers>button')
 const buttonsOperators = document.querySelectorAll('.operators>button')
 const display = document.querySelector(".display")
-const equals = document.querySelector('#equals')
+const equalsBtn = document.querySelector('#equals')
 
 
 function add(a,b){
@@ -68,16 +68,30 @@ buttonsNum.forEach((buttonsNum)=>{
 // typing number
 buttonsOperators.forEach((buttonsOperators)=>{
     buttonsOperators.addEventListener('click',(e)=>{
+        if(memoryArr.join("").split(" ").length === 3){
+            equals()
+            displayTextSecond.textContent = displayValueMain
+            
+            console.log(displayValueMain)
+         
+        }
+        // test if you have 2 numbers and operator than next operato means calculate what was before
+        
         memoryArr.push(" "+e.target.textContent+" ")
         
         displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
+        console.log(displayValueSecond)
     })
 })
 
 
 
-equals.addEventListener('click',()=>{
+equalsBtn.addEventListener('click',()=>{
+equals()
+})
+
+function equals(){
     let memoryArrDecode = memoryArr.join("").split(" ")
     
     firstNumber = memoryArrDecode[0]
@@ -86,12 +100,14 @@ equals.addEventListener('click',()=>{
 
     displayValueMain = operator(firstNumber,secondNumber,oper)
     displayTextMain.textContent = displayValueMain
-    
-    console.log("----")
-    console.log("first:"+firstNumber)
-    console.log("oper:"+oper)
-    console.log("second:"+ secondNumber)
-})
+
+    displayTextSecond.textContent = displayValueSecond
+    console.log(displayValueSecond)
+
+    memoryArr.splice(0,memoryArr.length)
+    memoryArr.push(displayValueMain)
+}
+
 // equal sighn trigers calculation
 
 // console.log(operator(firstNumber,secondNumber,oper))
