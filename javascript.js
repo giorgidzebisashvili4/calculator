@@ -27,13 +27,13 @@ let secondNumber = 5;
 
 
 function operator(){
-    if(oper === "add"){
+    if(oper === "+"){
         return add(firstNumber,secondNumber)
-    }else if(oper ==="subtract"){
+    }else if(oper ==="-"){
         return subtract(firstNumber,secondNumber)
-    }else if(oper === "multiply"){
+    }else if(oper === "*"){
         return multiply(firstNumber,secondNumber)
-    }else if(oper === "divide"){
+    }else if(oper === "/"){
         return divide(firstNumber,secondNumber) 
     }else{
         return "problem with operator function,oper recognition"
@@ -45,7 +45,7 @@ function operator(){
 let displayTextSecond = document.createElement("h4")
 let displayTextMain = document.createElement("h2")
 
-let displayValueSecond = "---"
+let displayValueSecond = ""
 let displayValueMain = 182
 
 displayTextSecond.textContent = displayValueSecond
@@ -54,26 +54,39 @@ displayTextSecond.textContent = displayValueSecond
 display.appendChild(displayTextSecond)
 display.appendChild(displayTextMain)
 
+let memoryArr = []
+
+
 buttonsNum.forEach((buttonsNum)=>{
     buttonsNum.addEventListener('click',(e)=>{
-        firstNumber = e.target.textContent
-        console.log(firstNumber)
-        
+        memoryArr.push(e.target.textContent)
+
+        displayValueSecond = memoryArr.join("")
+        displayTextSecond.textContent = displayValueSecond
     })
 })
 // typing number
 buttonsOperators.forEach((buttonsOperators)=>{
     buttonsOperators.addEventListener('click',(e)=>{
-        oper = e.target.id
-        console.log(oper)
+        memoryArr.push(" "+e.target.textContent+" ")
         
+        displayValueSecond = memoryArr.join("")
+        displayTextSecond.textContent = displayValueSecond
     })
 })
 
 
+
 equals.addEventListener('click',()=>{
+    let memoryArrDecode = memoryArr.join("").split(" ")
+    
+    firstNumber = memoryArrDecode[0]
+    oper = memoryArrDecode[1]
+    secondNumber= memoryArrDecode[2]
+
     displayValueMain = operator(firstNumber,secondNumber,oper)
     displayTextMain.textContent = displayValueMain
+    
     console.log("----")
     console.log("first:"+firstNumber)
     console.log("oper:"+oper)
