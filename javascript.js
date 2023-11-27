@@ -17,7 +17,24 @@ function divide(a,b){
 
 
 let firstNumber = 1;
-let operator = add ;
+let oper = "add" ;
 let secondNumber = 5;
 
-console.log(operator(firstNumber,secondNumber))
+
+function operator(firstNumber,secondNumber,oper){
+    if(oper === "add"){
+        return add(firstNumber,secondNumber)
+    }else if(oper ==="subtract"){
+        return subtract(firstNumber,secondNumber)
+    }else if(oper === "multiply"){
+        return multiply(firstNumber,secondNumber)
+    }else if(oper === "divide"){
+        return divide(firstNumber,secondNumber) 
+    }else{
+        return "problem with operator function,oper recognition"
+    }
+
+}
+
+
+console.log(operator(firstNumber,secondNumber,oper))
