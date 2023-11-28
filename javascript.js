@@ -65,6 +65,17 @@ let memoryArr = []
 
 buttonsNum.forEach((buttonsNum)=>{
     buttonsNum.addEventListener('click',(e)=>{
+        
+        if(memoryArr[0]===displayValueMain & memoryArr[1]=== undefined ){
+            console.log(memoryArr[1])
+            memoryArr.push(" "+oper+" ")
+            console.log(memoryArr[1])
+        }
+        //when = is made and push new numbers use last operator
+    console.log(memoryArr)
+    console.log(oper)
+
+
         memoryArr.push(e.target.textContent)
 
         displayValueSecond = memoryArr.join("")
@@ -113,6 +124,9 @@ function equals(){
 
     memoryArr.splice(0,memoryArr.length)
     memoryArr.push(displayValueMain)
+    console.log(memoryArr)
+
+    // memoryArr.splice(0,memoryArr.length)
     }
 }
 
@@ -124,10 +138,9 @@ clearBtn.addEventListener('click',()=>{
 function clear(){
 // delates data
 memoryArr.splice(0,memoryArr.length)
-displayValueMain = ""
-displayTextSecond = ""
 
-displayTextSecond.textContent = ""
+
+displayTextMain.textContent = ""
 displayTextSecond.textContent = ""
 console.log(memoryArr)
 }
