@@ -5,7 +5,7 @@ const display = document.querySelector(".display")
 const equalsBtn = document.querySelector('#equals')
 const clearBtn = document.querySelector("#clear")
 const backspaceBtn = document.querySelector("#backspace")
-const displayUpdateBtns = document.querySelector("#backspace") 
+const displayUpdateBtns = document.querySelectorAll('.numbers > button, .operators > button, #backspace')
 
 
 function add(a,b){
@@ -76,9 +76,6 @@ buttonsNum.forEach((buttonsNum)=>{
         || memoryArr.includes(" + "||" - "||" / "||" * ") ) 
         || (e.target.textContent !== ".")){
             memoryArr.push(e.target.textContent)
-
-        displayValueSecond = memoryArr.join("")
-        displayTextSecond.textContent = displayValueSecond
          }
         // use "." only ones in number 
     })
@@ -96,10 +93,6 @@ buttonsOperators.forEach((buttonsOperators)=>{
         // test if you have 2 numbers and operator than next operato means calculate what was before
         
         memoryArr.push(" "+e.target.textContent+" ")
-        
-        displayValueSecond = memoryArr.join("")
-        displayTextSecond.textContent = displayValueSecond
-        // show what is in array = what calculation is typed
     })
 })
 
@@ -114,11 +107,12 @@ console.log(total)
    
 
 })
-// delate last key typed  and display it 
-backspaceBtn.addEventListener('click',()=>{
 
-    displayValueSecond = memoryArr.join("")
+displayUpdateBtns.forEach((displayUpdateBtns)=>{
+    displayUpdateBtns.addEventListener('click',()=>{
+        displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
+    })
 })
 //update second screen when clicked
 
