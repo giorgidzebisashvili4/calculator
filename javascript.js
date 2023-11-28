@@ -80,6 +80,7 @@ buttonsNum.forEach((buttonsNum)=>{
 
         displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
+        // show what is in array = what calculation is typed
     })
 })
 // typing number
@@ -98,7 +99,7 @@ buttonsOperators.forEach((buttonsOperators)=>{
         
         displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
-        console.log(displayValueSecond)
+        // show what is in array = what calculation is typed
     })
 })
 
@@ -126,8 +127,9 @@ function equals(){
     memoryArr.push(displayValueMain)
     console.log(memoryArr)
 
-    // memoryArr.splice(0,memoryArr.length)
+
     }
+    // if in array is only number(no operator) do nothing
 }
 
 clearBtn.addEventListener('click',()=>{
@@ -136,7 +138,7 @@ clearBtn.addEventListener('click',()=>{
 
 
 function clear(){
-// delates data
+// delate data
 memoryArr.splice(0,memoryArr.length)
 
 
@@ -144,6 +146,4 @@ displayTextMain.textContent = ""
 displayTextSecond.textContent = ""
 console.log(memoryArr)
 }
-
-// equal sighn trigers calculation
 
