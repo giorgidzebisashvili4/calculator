@@ -4,7 +4,8 @@ const buttonsOperators = document.querySelectorAll('.operators>button')
 const display = document.querySelector(".display")
 const equalsBtn = document.querySelector('#equals')
 const clearBtn = document.querySelector("#clear")
-const backspaceBtn = document.querySelector("#backspace") 
+const backspaceBtn = document.querySelector("#backspace")
+const displayUpdateBtns = document.querySelector("#backspace") 
 
 
 function add(a,b){
@@ -103,12 +104,23 @@ buttonsOperators.forEach((buttonsOperators)=>{
 })
 
 backspaceBtn.addEventListener('click',()=>{
-    memoryArr.splice(-1,1)
-    console.log(memoryArr)
+    if(memoryArr.length===1){
+    let total = memoryArr[0].toString().split("").slice(0,-1).join("")
+console.log(total)
+    memoryArr.splice(0,1,total)    
+    }else{
+        memoryArr.splice(-1,1)
+    }
+   
+
+})
+// delate last key typed  and display it 
+backspaceBtn.addEventListener('click',()=>{
+
     displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
 })
-// delate last key typed  and display it 
+//update second screen when clicked
 
 equalsBtn.addEventListener('click',()=>{
 equals()
