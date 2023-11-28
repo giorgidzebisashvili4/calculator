@@ -4,6 +4,7 @@ const buttonsOperators = document.querySelectorAll('.operators>button')
 const display = document.querySelector(".display")
 const equalsBtn = document.querySelector('#equals')
 const clearBtn = document.querySelector("#clear")
+const backspaceBtn = document.querySelector("#backspace") 
 
 
 function add(a,b){
@@ -70,7 +71,6 @@ buttonsNum.forEach((buttonsNum)=>{
             memoryArr.push(" "+oper+" ")
         }
         //when = is made and push new numbers use last operator
-        console.log(memoryArr)
         if((!memoryArr.includes(".") 
         || memoryArr.includes(" + "||" - "||" / "||" * ") ) 
         || (e.target.textContent !== ".")){
@@ -102,7 +102,13 @@ buttonsOperators.forEach((buttonsOperators)=>{
     })
 })
 
-
+backspaceBtn.addEventListener('click',()=>{
+    memoryArr.splice(-1,1)
+    console.log(memoryArr)
+    displayValueSecond = memoryArr.join("")
+        displayTextSecond.textContent = displayValueSecond
+})
+// delate last key typed  and display it 
 
 equalsBtn.addEventListener('click',()=>{
 equals()
