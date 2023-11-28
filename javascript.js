@@ -70,24 +70,16 @@ buttonsNum.forEach((buttonsNum)=>{
             memoryArr.push(" "+oper+" ")
         }
         //when = is made and push new numbers use last operator
-        console.log(!memoryArr.includes("."))
-        console.log(e.target.textContent === "1")
-        if((!memoryArr.includes(".")) || (e.target.textContent !== ".")){
-            console.log("hey")
+        console.log(memoryArr)
+        if((!memoryArr.includes(".") 
+        || memoryArr.includes(" + "||" - "||" / "||" * ") ) 
+        || (e.target.textContent !== ".")){
             memoryArr.push(e.target.textContent)
 
         displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
-            
-        console.log(e.target.textContent)
          }
-
-        
-        // memoryArr.push(e.target.textContent)
-
-        // displayValueSecond = memoryArr.join("")
-        // displayTextSecond.textContent = displayValueSecond
-        // show what is in array = what calculation is typed
+        // use "." only ones in number 
     })
 })
 // typing number
