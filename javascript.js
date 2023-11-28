@@ -65,21 +65,28 @@ let memoryArr = []
 
 buttonsNum.forEach((buttonsNum)=>{
     buttonsNum.addEventListener('click',(e)=>{
-        
+      
         if(memoryArr[0]===displayValueMain & memoryArr[1]=== undefined ){
-            console.log(memoryArr[1])
             memoryArr.push(" "+oper+" ")
-            console.log(memoryArr[1])
         }
         //when = is made and push new numbers use last operator
-    console.log(memoryArr)
-    console.log(oper)
-
-
-        memoryArr.push(e.target.textContent)
+        console.log(!memoryArr.includes("."))
+        console.log(e.target.textContent === "1")
+        if((!memoryArr.includes(".")) || (e.target.textContent !== ".")){
+            console.log("hey")
+            memoryArr.push(e.target.textContent)
 
         displayValueSecond = memoryArr.join("")
         displayTextSecond.textContent = displayValueSecond
+            
+        console.log(e.target.textContent)
+         }
+
+        
+        // memoryArr.push(e.target.textContent)
+
+        // displayValueSecond = memoryArr.join("")
+        // displayTextSecond.textContent = displayValueSecond
         // show what is in array = what calculation is typed
     })
 })
