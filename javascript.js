@@ -158,6 +158,5 @@ memoryArr.splice(0,memoryArr.length)
 
 displayTextMain.textContent = ""
 displayTextSecond.textContent = ""
-console.log(memoryArr)
 }
 
