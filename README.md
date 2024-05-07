@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Welcome to the Minimalist Weather App! This project serves as a practice ground for honing React skills and mastering API requests. With React and Vite at its core, this simple yet effective application offers a hands-on opportunity to explore API integration while delivering essential weather information in a clean, minimalist interface. Explore weather forecasts with me as I dive into React and API requests.
+This calculator project was created as a practice ground for DOM and JavaScript skills.
+Its goal was to help me improve my skills in manipulating the Document Object Model (DOM) and practice JavaScript fundamentals.
 
 ## open and use
 
