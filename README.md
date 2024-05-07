@@ -2,8 +2,9 @@
 
 ## Introduction
 
-This calculator project was created as a practice ground for grid styling, DOM and JavaScript skills.
-Its goal was to help me improve my skills in manipulating the Document Object Model (DOM) and practice JavaScript fundamentals.
+Welcome to the Grid Calculator project!
+
+This project is all about practicing grid styling, DOM manipulation, and JavaScript basics. It's a hands-on journey into front-end development, where I explore and improve my skills. Join me as I navigate through the ins and outs of building this calculator from scratch.
 
 ## open and use
 
