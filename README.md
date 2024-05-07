@@ -20,6 +20,7 @@ just open index.html
 - CSS
 - HTML
 - DOM
+- style with grid
 
 #### Tools
 
