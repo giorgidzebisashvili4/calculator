@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This calculator project was created as a practice ground for DOM and JavaScript skills.
+This calculator project was created as a practice ground for grid styling, DOM and JavaScript skills.
 Its goal was to help me improve my skills in manipulating the Document Object Model (DOM) and practice JavaScript fundamentals.
 
 ## open and use
