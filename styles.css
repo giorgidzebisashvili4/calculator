@@ -1,0 +1,93 @@
+@font-face {
+  font-family: digital-display-font;
+  src: url(/fonts/digital-7.regular.ttf);
+}
+@font-face {
+  font-family: btn-font;
+  src: url(/fonts/Roboto/Roboto-Medium.ttf);
+}
+
+body {
+  background: url(./images/pexels-skitterphoto-379526.jpg);
+  background-repeat: no-repeat;
+  background-size: fill;
+  display: grid;
+  justify-content: center;
+}
+
+.calculator-container {
+  background-color: rgb(29, 29, 29);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.654), inset 0 0 25px #ffffff3b;
+  margin-top: 50px;
+}
+
+.display {
+  background-color: rgb(203, 203, 203);
+  font-family: digital-display-font, sans-serif;
+  font-size: 60px;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 182px;
+  width: 405px;
+  border-radius: 10px;
+}
+.display * {
+  margin: 20px;
+  padding: 10px;
+}
+
+button {
+  font-family: btn-font, sans-serif;
+  font-size: 50px;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+
+  border: none;
+}
+
+.numbers,
+.operators,
+.other,
+.buttons {
+  gap: 15px;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  text-decoration: none;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+}
+.operators {
+  display: grid;
+  grid-template-columns: 100px;
+}
+.other {
+  grid-area: 1/1/2/3;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+}
+#backspace,
+#dot {
+  grid-column: 2 / span 2;
+}
+
+.other img {
+  filter: invert(100%) sepia(14%) saturate(7483%) hue-rotate(290deg)
+    brightness(125%) contrast(92%);
+  width: 40px;
+}
+
+.numbers button {
+  background-color: orangered;
+}
+.operators button,
+.other button {
+  background-color: green;
+}
